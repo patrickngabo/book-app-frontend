@@ -1,0 +1,28 @@
+#App{
+  max-width: 1150px;
+  margin: 0 auto;
+}
+nav{
+  padding: 20px 0 20px 0;
+  background: #0B5345;
+  margin: 0 auto;
+}
+form{
+  border: 1px solid #0B5345;
+  border-radius: 1px;
+  margin: 50px;
+  padding: 30px;
+  width: 500px;
+}input{
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 0;
+ }
+input[type=submit]{
+ background: #0B5345;
+ color: #ffffff;
+ border: none;
+ border-radius: 5px;
+}
