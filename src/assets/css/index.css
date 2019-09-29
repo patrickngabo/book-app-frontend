@@ -12,6 +12,17 @@ nav{
   width: 600px;
   margin: 10px auto;
 }
+.create-form{
+  font-size: 24px;
+  margin: 40px;
+}
+.update-form{
+  font-size: 24px;
+  margin: 40px;
+}
+.create-button a{
+color: #ffffff;
+}
 form{
   border-radius: 1px;
   margin: 50px;
