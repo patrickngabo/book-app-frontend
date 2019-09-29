@@ -1,15 +1,24 @@
 import * as types from '../constants/actionTypes';
-import initialState from './initialState';
 
-export default function bookReducer(state = initialState.books, action) {
+const initialState = {
+  books: {},
+  loading: false,
+  errors: null,
+};
+
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.CREATE_BOOK_SUCCESS:
-      return [...state, { ...action.book }];
+      return { ...state, books: action.payload, loading: false };
     case types.UPDATE_BOOK_SUCCESS:
-      return state.map(book => book.id === action.book.id ? action.book : book);
+      return { ...state, books: action.payload, loading: false };
     case types.LOAD_BOOKS_SUCCESS:
-      return action.books;
+      return { ...state, books: action.payload };
+    case types.DELETE_BOOK_OPTIMISTIC:
+      return { ...state, books: action.payload, loading: false };
     default:
       return state;
   }
-}
+};
+
+export default bookReducer;

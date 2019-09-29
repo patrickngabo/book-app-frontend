@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const HomePage = () => (
   <div className="jumbotron">
     <h1>Book store application</h1>
-    <Link to="books" className="btn btn-primary btn-lg">
+    <Link to="createBook" className="btn btn-primary btn-lg">
       Create Book
     </Link>
   </div>

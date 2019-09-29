@@ -7,8 +7,12 @@ nav{
   background: #0B5345;
   margin: 0 auto;
 }
+.bookform{
+  border: 1px solid #A7A3A3;
+  width: 600px;
+  margin: 10px auto;
+}
 form{
-  border: 1px solid #0B5345;
   border-radius: 1px;
   margin: 50px;
   padding: 30px;

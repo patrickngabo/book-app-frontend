@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <nav>
       <NavLink to="/" activeStyle={activeStyle} exact>Home</NavLink>{'|'}
-      <NavLink to="/books" activeStyle={activeStyle}>Create book</NavLink>
+      <NavLink to="/books" activeStyle={activeStyle}>Books</NavLink>
     </nav>
   );
 };
