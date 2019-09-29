@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { toast } from 'react-toastify';
 import BookForm from '../components/books/BookForm';
 import { createBookAction } from '../redux/actions/bookActions';
 import { postDataThunk } from '../redux/thunks/index';
@@ -36,12 +35,14 @@ class CreateBook extends Component {
         <div className="alert-danger">
         {this.props.books.errors}
         </div>
+        <div>
+          <p className="create-form">Create Book</p>
         <BookForm
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
           book={this.state.book}
           />
-
+      </div>
       </div>
     );
   }
