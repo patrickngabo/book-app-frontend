@@ -1,9 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider as ReduxProvider } from 'react-redux';
+import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './components/App';
+import App from './containers/App';
 import './assets/css/index.css';
 import configureStore from './redux/store/configureStore';
 
@@ -11,8 +10,8 @@ import configureStore from './redux/store/configureStore';
 const store = configureStore();
 
 render(
-  <ReduxProvider store={store}>
-    <Router><App /></Router>
-  </ReduxProvider>,
-  document.getElementById('App')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('App'),
 );

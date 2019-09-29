@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "run-p start:dev start:api",
-    "start:dev": "webpack-dev-server --config webpack.config.js --port 8080",
-    "prestart:api": "node tools/createMockDb.js",
-    "start:api": "node tools/apiServer.js",
+    "dev": "npm run lint-fix && webpack-dev-server --mode development --open",
+    "start": "serve -s ./build",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch",
+    "lint": "eslint ./",
+    "lint-fix": "eslint ./ --fix"
   },
   "repository": {
     "type": "git",
@@ -24,91 +24,49 @@
   "homepage": "https://github.com/patrickngabo/book-app-frontend#readme",
   "dependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "babel-polyfill": "6.26.0",
+    "axios": "^0.19.0",
     "bootstrap": "4.3.1",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "24.8.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "immer": "3.2.0",
-    "json-server": "0.15.0",
-    "prop-types": "15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "7.1.0",
-    "react-router-dom": "5.0.1",
-    "react-toastify": "5.3.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.0.1",
+    "react-toast-notifications": "^2.2.5",
+    "react-toastify": "^5.4.0",
     "redux": "^4.0.4",
-    "redux-immutable-state-invariant": "2.1.0",
-    "redux-thunk": "2.3.0",
-    "reselect": "4.0.0",
-    "uuid": "^3.3.2",
-    "webpack": "^4.39.1"
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-thunk": "^2.3.0",
+    "sass-loader": "^7.2.0",
+    "serve": "^11.1.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "babel-eslint": "10.0.2",
-    "css-loader": "3.2.0",
-    "cssnano": "4.1.10",
     "enzyme": "3.10.0",
-    "enzyme-adapter-react-16.1": "1.6.1",
-    "eslint": "6.1.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-loader": "2.2.1",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-react": "7.14.3",
-    "fetch-mock": "7.3.9",
-    "http-server": "0.11.1",
-    "node-fetch": "2.6.0",
-    "npm-run-all": "4.1.5",
-    "postcss-loader": "3.0.0",
-    "react-test-render": "1.1.2",
-    "react-testing-library": "8.0.1",
-    "redux-mock-store": "1.5.3",
-    "rimraf": "2.6.3",
-    "style-loader": "1.0.0",
-    "webpack-bundle-analyzer": "3.4.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
-  },
-  "engines": {
-    "node": ">=8"
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:import/errors",
-      "plugin:import/warnings"
-    ],
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true,
-      "jest": true
-    },
-    "rules": {
-      "no-debugger": "off",
-      "no-console": "off",
-      "no-unused-vars": "warn",
-      "react/prop-types": "warn"
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "root": true
+    "enzyme-adapter-react-16.3": "1.7.1",
+    "enzyme-to-json": "3.4.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.14.3",
+    "nyc": "^14.1.1",
+    "jest": "24.8.0",
+    "redux-devtools": "^3.5.0"
   }
 }
